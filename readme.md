@@ -1,6 +1,6 @@
 # NodeRateGuard
 
-node-rate-guard is a simple, memory-based rate limiting middleware for Node.js applications. It's designed to protect your Node.js and Express.js applications from excessive and potentially harmful traffic by limiting the number of requests a client can make in a given time frame.
+node-traffic-shield is a simple, memory-based rate limiting middleware for Node.js applications. It's designed to protect your Node.js and Express.js applications from excessive and potentially harmful traffic by limiting the number of requests a client can make in a given time frame.
 
 ## Features
 
@@ -13,7 +13,7 @@ node-rate-guard is a simple, memory-based rate limiting middleware for Node.js a
 
 Install NodeRateGuard via npm:
 
-```npm install node-rate-guard```
+```npm install node-traffic-shield```
 
 
 ## Usage
@@ -22,11 +22,11 @@ To use NodeRateGuard, import it into your Express.js application and apply it as
 
 ### Basic Usage
 
-Here's how to set up node-rate-guard with default settings for a simple Express.js application:
+Here's how to set up node-traffic-shield with default settings for a simple Express.js application:
 
 ```javascript
 const express = require('express');
-const rateLimiter = require('node-rate-guard');
+const rateLimiter = require('node-traffic-shield');
 
 const app = express();
 
@@ -56,7 +56,7 @@ In NestJS, wrap the middleware in a class that implements `NestMiddleware`.
 // rateLimiter.middleware.ts
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-const rateLimiter = require('node-rate-guard');
+const rateLimiter = require('node-traffic-shield');
 
 @Injectable()
 export class RateLimiterMiddleware implements NestMiddleware {
@@ -93,7 +93,7 @@ export class AppModule {
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/BekzodbekTurgunov/node-rate-guard/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/BekzodbekTurgunov/node-traffic-shield/issues).
 
 ## Support
 
@@ -101,6 +101,6 @@ If you have any questions or issues, please open an issue on the GitHub reposito
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/BekzodbekTurgunov/node-rate-guard) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/BekzodbekTurgunov/node-traffic-shield) file for details.
 
-# node-rate-guard
+# node-traffic-shield

@@ -1,7 +1,7 @@
 {
-  "name": "node-rate-guard",
+  "name": "node-traffic-shield",
   "version": "1.0.0",
-  "description": "Request rate limit by ip",
+  "description": "Versatile rate-limiting middleware for Node.js, compatible with both Express.js and NestJS, designed to safeguard applications from excessive traffic.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
