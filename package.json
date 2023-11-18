@@ -1,5 +1,5 @@
 {
-  "name": "ip-rate-limiter",
+  "name": "node-rate-guard",
   "version": "1.0.0",
   "description": "Request rate limit by ip",
   "main": "index.js",

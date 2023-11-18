@@ -1,6 +1,6 @@
 # NodeRateGuard
 
-NodeRateGuard is a simple, memory-based rate limiting middleware for Node.js applications. It's designed to protect your Node.js and Express.js applications from excessive and potentially harmful traffic by limiting the number of requests a client can make in a given time frame.
+node-rate-guard is a simple, memory-based rate limiting middleware for Node.js applications. It's designed to protect your Node.js and Express.js applications from excessive and potentially harmful traffic by limiting the number of requests a client can make in a given time frame.
 
 ## Features
 
@@ -22,7 +22,7 @@ To use NodeRateGuard, import it into your Express.js application and apply it as
 
 ### Basic Usage
 
-Here's how to set up NodeRateGuard with default settings for a simple Express.js application:
+Here's how to set up node-rate-guard with default settings for a simple Express.js application:
 
 ```javascript
 const express = require('express');
@@ -44,6 +44,46 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 }); 
+```
+
+### NestJS
+
+In NestJS, wrap the middleware in a class that implements `NestMiddleware`.
+
+**Create a Middleware Wrapper**
+
+```typescript
+// rateLimiter.middleware.ts
+import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Request, Response, NextFunction } from 'express';
+const rateLimiter = require('node-rate-guard');
+
+@Injectable()
+export class RateLimiterMiddleware implements NestMiddleware {
+    use(req: Request, res: Response, next: NextFunction) {
+        return rateLimiter({ limit: 100, windowMs: 15 * 60 * 1000 })(req, res, next);
+    }
+}
+```
+**Apply Middleware in a NestJS Module**
+
+In your NestJS module (e.g., `app.module.ts`), apply the middleware using the `configure` method of the module class. Here's an example:
+
+```typescript
+// app.module.ts
+import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
+import { RateLimiterMiddleware } from './rateLimiter.middleware';
+
+@Module({
+  // ... other module settings
+})
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(RateLimiterMiddleware)
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
+  }
+}
 ```
 
 ### Configuration Options
