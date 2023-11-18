@@ -1,0 +1,43 @@
+{
+  "name": "ip-rate-limiter",
+  "version": "1.0.0",
+  "description": "Request rate limit by ip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BekzodbekTurgunov/my-rate-limiter.git"
+  },
+  "keywords": [
+    "rate-limit",
+    "rate-limiter",
+    "express-middleware",
+    "nodejs",
+    "express",
+    "request-limit",
+    "traffic-control",
+    "api-security",
+    "ddos-protection",
+    "brute-force-protection",
+    "throttling",
+    "request-throttle",
+    "middleware",
+    "node-middleware",
+    "express-rate-limit",
+    "api-rate-limit",
+    "rate-limiting",
+    "server-security",
+    "node-security"
+  ]
+,
+  "author": "Bekzodbek Turgunov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BekzodbekTurgunov/my-rate-limiter/issues"
+  },
+  "homepage": "https://github.com/BekzodbekTurgunov/my-rate-limiter#readme",
+  "dependencies": {
+  }
+}
