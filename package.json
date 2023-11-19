@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/BekzodbekTurgunov/my-rate-limiter.git"
   },
+  "types": "./@types/node-traffic-shield.d.ts",
   "keywords": [
     "rate-limit",
     "rate-limiter",

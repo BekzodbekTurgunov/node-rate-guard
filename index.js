@@ -12,7 +12,7 @@ const rateLimiter = ({ limit, windowMs }) => {
     const requests = {};
 
     return (req, res, next) => {
-        const ip = req.ip;
+        const ip = req.headers["x-forwarded-for"] ?? req.ip
         const currentTime = Date.now();
 
         if (!requests[ip] || currentTime - requests[ip].startTime > windowMs) {
