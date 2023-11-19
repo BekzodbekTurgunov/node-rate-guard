@@ -1,6 +1,6 @@
 {
   "name": "node-traffic-shield",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Versatile rate-limiting middleware for Node.js, compatible with both Express.js and NestJS, designed to safeguard applications from excessive traffic.",
   "main": "index.js",
   "scripts": {
